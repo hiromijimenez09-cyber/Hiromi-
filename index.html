@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond the Sky | Hiromi Pérez Jiménez</title>
+
+  <style>
+    :root {
+      --navy: #081B38;
+      --blue: #102B52;
+      --purple: #7A4DFF;
+      --lilac: #C8A2FF;
+      --lavender: #E9DDFF;
+      --white: #FFFFFF;
+      --silver: #E8EAF2;
+      --gold: #D4AF37;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8, 27, 56, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 162, 255, 0.3);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--lilac);
+    }
+
+    .menu {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: var(--lilac);
+    }
+
+    section {
+      padding: 110px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+      padding-top: 150px;
+    }
+
+    .tag {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.95;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--lilac);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--lilac);
+    }
+
+    h3 {
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--silver);
+      font-size: 1.05rem;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.2rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .primary {
+      background: var(--purple);
+      color: var(--white);
+    }
+
+    .secondary {
+      border: 2px solid var(--lilac);
+      color: var(--white);
+    }
+
+    .gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(200, 162, 255, 0.35);
+    }
+
+    .photo-box {
+      min-height: 430px;
+      border-radius: 30px;
+      background:
+        linear-gradient(rgba(122, 77, 255, 0.25), rgba(8, 27, 56, 0.85)),
+        url("images/your-photo-here.jpg");
+      background-size: cover;
+      background-position: center;
+      border: 2px solid rgba(200, 162, 255, 0.5);
+      display: flex;
+      align-items: end;
+      padding: 25px;
+    }
+
+    .photo-box p {
+      background: rgba(8, 27, 56, 0.75);
+      padding: 12px 18px;
+      border-radius: 15px;
+      font-size: 0.95rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid rgba(200, 162, 255, 0.25);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(122, 77, 255, 0.18);
+      border-color: var(--lilac);
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .light-section {
+      background: var(--white);
+      color: var(--navy);
+      border-radius: 35px;
+      margin-top: 40px;
+      padding: 70px;
+    }
+
+    .light-section h2 {
+      color: var(--purple);
+    }
+
+    .light-section p,
+    .light-section li {
+      color: #26344f;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 15px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: var(--silver);
+    }
+
+    .quote {
+      border-left: 5px solid var(--gold);
+      padding-left: 20px;
+      margin: 25px 0;
+      font-size: 1.25rem;
+      color: var(--lavender);
+      font-style: italic;
+    }
+
+    .placeholder {
+      border: 2px dashed var(--lilac);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 25px;
+      background: rgba(200, 162, 255, 0.08);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 8%;
+      background: #06162e;
+      color: var(--silver);
+    }
+
+    a {
+      color: var(--lilac);
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .menu {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .light-section {
+        padding: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Beyond <span>the Sky</span></div>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#resume">Resume / CV</a></li>
+      <li><a href="#statement">Personal Statement</a></li>
+      <li><a href="#work">Relevant Work</a></li>
+      <li><a href="#interests">Personal Interests</a></li>
+      <li><a href="#video">Admissions Video</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <div class="tag">Future Pilot • Global Learner • Aviation Leader</div>
+    <h1>Beyond <span>the Sky</span></h1>
+
+    <p>
+      Welcome to the professional portfolio of Hiromi Pérez Jiménez, an aspiring pilot
+      driven by resilience, discipline, curiosity, and ambition. This website showcases
+      my academic journey, personal growth, international experiences, and future goals
+      in aviation.
+    </p>
+
+    <div class="quote">
+      “Transforming challenges into opportunities through courage, leadership, and purpose.”
+    </div>
+
+    <div class="buttons">
+      <a href="#work" class="btn primary">View Portfolio</a>
+      <a href="files/Hiromi-CV.pdf" download class="btn gold">Download CV</a>
+      <a href="#statement" class="btn secondary">Read My Story</a>
+    </div>
+  </div>
+
+  <div class="photo-box">
+    <p>Replace this image with a professional photo of yourself, an aviation photo, or a photo from your international experience.</p>
+  </div>
+</section>
+
+<section id="facts">
+  <h2>Quick Facts</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">✈️</div>
+      <h3>Career Goal</h3>
+      <p>Professional Pilot</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌎</div>
+      <h3>Languages</h3>
+      <p>Spanish • English • French</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>Academic Interests</h3>
+      <p>Aviation • Technology • Science</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💜</div>
+      <h3>Core Values</h3>
+      <p>Resilience • Discipline • Curiosity • Leadership</p>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <h2>Resume / CV</h2>
+
+  <p>
+    This section presents my updated professional and academic background, including
+    my career goal, strengths, education, interests, and skills.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">✈️</div>
+      <h3>Career Goal</h3>
+      <p>My goal is to become a professional pilot, develop strong technical skills, and pursue excellence in aviation.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💜</div>
+      <h3>Personal Strengths</h3>
+      <p>Discipline, responsibility, ability to work under pressure, and passion for learning new languages and cultures.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Education & Interests</h3>
+      <p>Strong interest in aviation, international opportunities, science, technology, communication, and wellness.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌎</div>
+      <h3>Skills</h3>
+      <p>Communication, research, presentations, adaptability, teamwork, curiosity, and motivation to improve.</p>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a href="files/Hiromi-CV.pdf" download class="btn primary">Download My CV</a>
+  </div>
+</section>
+
+<section id="statement">
+  <div class="light-section">
+    <h2>Personal Statement</h2>
+
+    <h3>Turning Challenges into Purpose Through Leadership and Resilience</h3>
+
+    <p>
+      My personal statement reflects one of the most meaningful experiences in my life:
+      traveling to another country to practice French and discovering my ability to grow,
+      adapt, and lead.
+    </p>
+
+    <p>
+      This journey taught me resilience, leadership, independence, and respect. It helped
+      me understand that growth begins when I step outside my comfort zone and trust my
+      own ability to build a better future.
+    </p>
+
+    <div class="quote" style="color:#5B2C83;">
+      “If you do not overcome your fear, you lose more than you think—you lose the chance to grow, to move forward, and to succeed.”
+    </div>
+
+    <div class="placeholder">
+      Embed or paste your full Personal Statement PDF here.
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Relevant Work</h2>
+
+  <p>
+    This portfolio includes projects, assignments, research, presentations, and tasks
+    that represent my academic growth, creativity, and preparation for my future career.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🛩️</div>
+      <h3>Aviation Career Research</h3>
+      <p>Research about aviation schools, pilot training, technical preparation, and future professional opportunities.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Digital Footprint Project</h3>
+      <p>A project about online identity, professional image, and the importance of responsible digital presence.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Academic Projects</h3>
+      <p>Presentations, research assignments, and school projects that demonstrate organization and communication skills.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>International Experience</h3>
+      <p>My experience in Canada helped me strengthen my confidence, cultural awareness, and language learning.</p>
+    </div>
+  </div>
+
+  <div class="placeholder">
+    Add screenshots, project images, links, PDFs, or presentations here.
+  </div>
+</section>
+
+<section id="interests">
+  <div class="light-section">
+    <h2>Personal Interests</h2>
+
+    <p>
+      My interests reflect my passion for aviation, leadership, learning, and global growth.
+    </p>
+
+    <ul>
+      <li>Aviation and airplanes</li>
+      <li>Languages and cultural exchange</li>
+      <li>Travel and international experiences</li>
+      <li>Science and technology</li>
+      <li>Leadership and personal development</li>
+      <li>Volunteering and helping others</li>
+      <li>Health, wellness, and communication</li>
+    </ul>
+
+    <div class="placeholder">
+      Add personal photos, travel photos, volunteering photos, or aviation images here.
+    </div>
+  </div>
+</section>
+
+<section id="video">
+  <h2>Admissions Video</h2>
+
+  <p>
+    This page is reserved for my future admissions video. In this video, I will introduce
+    myself, explain my career goals, share my motivation to become a pilot, and describe
+    why I am prepared to continue growing academically and personally.
+  </p>
+
+  <div class="placeholder">
+    🎬 Video Coming Soon
+    <br><br>
+    Add your admissions video here after filming it.
+  </div>
+</section>
+
+<section id="contact">
+  <div class="light-section">
+    <h2>Contact</h2>
+
+    <p>
+      Thank you for visiting my professional portfolio. This website was created to share
+      my academic journey, personal growth, and future goals with universities, aviation
+      schools, and scholarship committees.
+    </p>
+
+    <br>
+
+    <p><strong>Name:</strong> Hiromi Pérez Jiménez</p>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:hiromi.jimenez09@gmail.com" style="color:#7A4DFF;text-decoration:none;font-weight:600;">
+        hiromi.jimenez09@gmail.com
+      </a>
+    </p>
+
+    <p><strong>Career Goal:</strong> Professional Pilot</p>
+
+    <div class="buttons">
+      <a href="mailto:hiromi.jimenez09@gmail.com" class="btn primary">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Beyond the Sky | Hiromi Pérez Jiménez</p>
+</footer>
+
+</body>
+</html>
