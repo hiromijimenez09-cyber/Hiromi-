@@ -7,14 +7,16 @@
 
   <style>
     :root {
-      --navy: #081B38;
-      --blue: #102B52;
-      --purple: #7A4DFF;
-      --lilac: #C8A2FF;
-      --lavender: #E9DDFF;
+      --dark: #0C0420;
+      --plum: #5D3C64;
+      --mauve: #7B466A;
+      --rose: #9F6496;
+      --blush: #D391B0;
+      --soft: #F7F2F6;
       --white: #FFFFFF;
-      --silver: #E8EAF2;
-      --gold: #D4AF37;
+      --gray: #E8E3E8;
+      --text: #241627;
+      --gold: #C8A96A;
     }
 
     * {
@@ -26,23 +28,23 @@
 
     body {
       font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-      color: var(--white);
-      line-height: 1.6;
+      background: var(--soft);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     header {
       position: fixed;
-      top: 0;
       width: 100%;
+      top: 0;
       z-index: 1000;
-      background: rgba(8, 27, 56, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(200, 162, 255, 0.3);
+      background: rgba(12, 4, 32, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(211, 145, 176, 0.35);
     }
 
     nav {
-      max-width: 1200px;
+      max-width: 1250px;
       margin: auto;
       padding: 18px 8%;
       display: flex;
@@ -51,17 +53,19 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      color: var(--white);
       font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
     }
 
     .logo span {
-      color: var(--lilac);
+      color: var(--blush);
     }
 
     .menu {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       list-style: none;
       flex-wrap: wrap;
     }
@@ -70,16 +74,17 @@
       color: var(--white);
       text-decoration: none;
       font-weight: 600;
+      font-size: 0.95rem;
       transition: 0.3s;
     }
 
     .menu a:hover {
-      color: var(--lilac);
+      color: var(--blush);
     }
 
     section {
       padding: 110px 8%;
-      max-width: 1200px;
+      max-width: 1250px;
       margin: auto;
     }
 
@@ -88,146 +93,176 @@
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      gap: 40px;
+      gap: 45px;
       padding-top: 150px;
     }
 
     .tag {
-      color: var(--gold);
-      font-weight: 700;
+      color: var(--mauve);
+      font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-size: clamp(3.2rem, 8vw, 6.7rem);
       line-height: 0.95;
+      color: var(--dark);
       margin-bottom: 25px;
     }
 
     h1 span {
-      color: var(--lilac);
+      color: var(--rose);
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       margin-bottom: 20px;
-      color: var(--lilac);
+      color: var(--plum);
     }
 
     h3 {
+      color: var(--dark);
       margin-bottom: 12px;
     }
 
     p {
-      color: var(--silver);
+      color: #403447;
       font-size: 1.05rem;
     }
 
     .hero p {
-      max-width: 650px;
-      font-size: 1.2rem;
+      font-size: 1.18rem;
+      max-width: 680px;
+    }
+
+    .quote {
+      border-left: 5px solid var(--gold);
+      padding-left: 20px;
+      margin: 28px 0;
+      font-size: 1.18rem;
+      color: var(--plum);
+      font-style: italic;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
-      margin-top: 35px;
+      margin-top: 30px;
     }
 
     .btn {
-      padding: 14px 26px;
+      padding: 14px 28px;
       border-radius: 40px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       transition: 0.3s;
       display: inline-block;
     }
 
     .primary {
-      background: var(--purple);
+      background: var(--plum);
       color: var(--white);
     }
 
     .secondary {
-      border: 2px solid var(--lilac);
-      color: var(--white);
+      border: 2px solid var(--mauve);
+      color: var(--plum);
     }
 
     .gold {
       background: var(--gold);
-      color: var(--navy);
+      color: var(--dark);
     }
 
     .btn:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(200, 162, 255, 0.35);
+      box-shadow: 0 15px 35px rgba(93, 60, 100, 0.25);
     }
 
     .photo-box {
-      min-height: 430px;
-      border-radius: 30px;
+      min-height: 470px;
+      border-radius: 35px;
       background:
-        linear-gradient(rgba(122, 77, 255, 0.25), rgba(8, 27, 56, 0.85)),
-        url("images/your-photo-here.jpg");
+        linear-gradient(rgba(12, 4, 32, 0.15), rgba(93, 60, 100, 0.55)),
+        url("images/hiromi-main.jpg");
       background-size: cover;
       background-position: center;
-      border: 2px solid rgba(200, 162, 255, 0.5);
+      border: 3px solid rgba(211, 145, 176, 0.6);
       display: flex;
       align-items: end;
-      padding: 25px;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(12, 4, 32, 0.25);
     }
 
     .photo-box p {
-      background: rgba(8, 27, 56, 0.75);
-      padding: 12px 18px;
-      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--dark);
+      padding: 14px 18px;
+      border-radius: 16px;
       font-size: 0.95rem;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 25px;
       margin-top: 35px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 28px;
-      border-radius: 24px;
-      border: 1px solid rgba(200, 162, 255, 0.25);
+      background: var(--white);
+      padding: 30px;
+      border-radius: 26px;
+      border: 1px solid var(--gray);
+      box-shadow: 0 18px 40px rgba(12, 4, 32, 0.08);
       transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      background: rgba(122, 77, 255, 0.18);
-      border-color: var(--lilac);
+      border-color: var(--blush);
+      box-shadow: 0 25px 55px rgba(93, 60, 100, 0.18);
     }
 
-    .icon {
+    .card .number {
       font-size: 2rem;
-      margin-bottom: 15px;
+      font-weight: 900;
+      color: var(--rose);
+      margin-bottom: 12px;
     }
 
-    .light-section {
-      background: var(--white);
-      color: var(--navy);
-      border-radius: 35px;
-      margin-top: 40px;
+    .dark-section {
+      background: linear-gradient(135deg, var(--dark), var(--plum));
+      color: var(--white);
+      border-radius: 40px;
       padding: 70px;
+      box-shadow: 0 25px 60px rgba(12, 4, 32, 0.25);
     }
 
-    .light-section h2 {
-      color: var(--purple);
+    .dark-section h2,
+    .dark-section h3 {
+      color: var(--white);
     }
 
-    .light-section p,
-    .light-section li {
-      color: #26344f;
+    .dark-section p,
+    .dark-section li {
+      color: var(--gray);
+    }
+
+    .statement-box {
+      background: var(--white);
+      padding: 55px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(12, 4, 32, 0.08);
+      margin-top: 30px;
+    }
+
+    .statement-box p {
+      margin-bottom: 20px;
+      text-align: justify;
     }
 
     ul {
@@ -237,36 +272,32 @@
 
     li {
       margin-bottom: 10px;
-      color: var(--silver);
-    }
-
-    .quote {
-      border-left: 5px solid var(--gold);
-      padding-left: 20px;
-      margin: 25px 0;
-      font-size: 1.25rem;
-      color: var(--lavender);
-      font-style: italic;
+      color: #403447;
     }
 
     .placeholder {
-      border: 2px dashed var(--lilac);
+      border: 2px dashed var(--rose);
       border-radius: 24px;
       padding: 40px;
       text-align: center;
       margin-top: 25px;
-      background: rgba(200, 162, 255, 0.08);
+      background: rgba(211, 145, 176, 0.15);
+      color: var(--plum);
+      font-weight: 700;
     }
 
     footer {
       text-align: center;
-      padding: 40px 8%;
-      background: #06162e;
-      color: var(--silver);
+      padding: 45px 8%;
+      background: var(--dark);
+    }
+
+    footer p {
+      color: var(--gray);
     }
 
     a {
-      color: var(--lilac);
+      color: var(--mauve);
     }
 
     @media (max-width: 850px) {
@@ -277,7 +308,7 @@
 
       .menu {
         justify-content: center;
-        gap: 15px;
+        gap: 14px;
       }
 
       .hero {
@@ -289,7 +320,8 @@
         justify-content: center;
       }
 
-      .light-section {
+      .dark-section,
+      .statement-box {
         padding: 35px;
       }
     }
@@ -319,14 +351,11 @@
     <h1>Beyond <span>the Sky</span></h1>
 
     <p>
-      Welcome to the professional portfolio of Hiromi Pérez Jiménez, an aspiring pilot
-      driven by resilience, discipline, curiosity, and ambition. This website showcases
-      my academic journey, personal growth, international experiences, and future goals
-      in aviation.
+      Welcome to the professional portfolio of Hiromi Pérez Jiménez, an aspiring pilot with a clear vision for her future in aviation. This website presents my academic journey, personal growth, international experiences, leadership development, and determination to transform challenges into opportunities.
     </p>
 
     <div class="quote">
-      “Transforming challenges into opportunities through courage, leadership, and purpose.”
+      “Every challenge has become part of the runway that is preparing me to reach higher.”
     </div>
 
     <div class="buttons">
@@ -346,194 +375,203 @@
 
   <div class="cards">
     <div class="card">
-      <div class="icon">✈️</div>
+      <div class="number">01</div>
       <h3>Career Goal</h3>
-      <p>Professional Pilot</p>
+      <p>To become a professional pilot and pursue excellence in aviation.</p>
     </div>
 
     <div class="card">
-      <div class="icon">🌎</div>
+      <div class="number">02</div>
       <h3>Languages</h3>
-      <p>Spanish • English • French</p>
+      <p>Spanish, English, and French learning experience.</p>
     </div>
 
     <div class="card">
-      <div class="icon">🎓</div>
+      <div class="number">03</div>
       <h3>Academic Interests</h3>
-      <p>Aviation • Technology • Science</p>
+      <p>Aviation, technology, science, communication, and international opportunities.</p>
     </div>
 
     <div class="card">
-      <div class="icon">💜</div>
+      <div class="number">04</div>
       <h3>Core Values</h3>
-      <p>Resilience • Discipline • Curiosity • Leadership</p>
+      <p>Resilience, discipline, responsibility, curiosity, leadership, and ambition.</p>
     </div>
   </div>
 </section>
 
 <section id="resume">
-  <h2>Resume / CV</h2>
+  <div class="dark-section">
+    <h2>Resume / CV</h2>
 
-  <p>
-    This section presents my updated professional and academic background, including
-    my career goal, strengths, education, interests, and skills.
-  </p>
+    <p>
+      This section presents my academic background, personal strengths, career goals, and skills. My objective is to continue preparing myself for a future in aviation through discipline, technical learning, responsibility, and strong communication.
+    </p>
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">✈️</div>
-      <h3>Career Goal</h3>
-      <p>My goal is to become a professional pilot, develop strong technical skills, and pursue excellence in aviation.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="number">Goal</div>
+        <h3>Professional Pilot</h3>
+        <p>My goal is to become a professional pilot, challenge myself, develop strong technical skills, and pursue excellence in aviation.</p>
+      </div>
+
+      <div class="card">
+        <div class="number">Strengths</div>
+        <h3>Personal Strengths</h3>
+        <p>Strong discipline, responsibility, ability to work under pressure, and passion for learning new languages and cultures.</p>
+      </div>
+
+      <div class="card">
+        <div class="number">Growth</div>
+        <h3>Education & Interests</h3>
+        <p>Strong interest in aviation, international opportunities, science, technology, communication, and wellness.</p>
+      </div>
+
+      <div class="card">
+        <div class="number">Skills</div>
+        <h3>Core Skills</h3>
+        <p>Communication, research, presentation skills, adaptability, teamwork, curiosity, and motivation to improve.</p>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="icon">💜</div>
-      <h3>Personal Strengths</h3>
-      <p>Discipline, responsibility, ability to work under pressure, and passion for learning new languages and cultures.</p>
+    <div class="buttons">
+      <a href="files/Hiromi-CV.pdf" download class="btn gold">Download My CV</a>
     </div>
-
-    <div class="card">
-      <div class="icon">📚</div>
-      <h3>Education & Interests</h3>
-      <p>Strong interest in aviation, international opportunities, science, technology, communication, and wellness.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🌎</div>
-      <h3>Skills</h3>
-      <p>Communication, research, presentations, adaptability, teamwork, curiosity, and motivation to improve.</p>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <a href="files/Hiromi-CV.pdf" download class="btn primary">Download My CV</a>
   </div>
 </section>
 
 <section id="statement">
-  <div class="light-section">
-    <h2>Personal Statement</h2>
+  <h2>Personal Statement</h2>
+  <h3>Turning Challenges into Purpose Through Leadership and Resilience</h3>
 
-    <h3>Turning Challenges into Purpose Through Leadership and Resilience</h3>
+  <div class="statement-box">
+    <p>The moment the plane touched the ground, I realized that everything I thought I knew about myself was about to change. Traveling to another country to practice French was not just a dream fulfilled; it was the beginning of discovering who I could become. This trip was one of my greatest achievements because I had worked hard to feel confident in myself and to believe that I was capable of becoming someone successful in my own way. I knew I deserved this opportunity, but I also understood it would not come easily.</p>
 
-    <p>
-      My personal statement reflects one of the most meaningful experiences in my life:
-      traveling to another country to practice French and discovering my ability to grow,
-      adapt, and lead.
-    </p>
+    <p>My mom has always told me, “If you want something, fight for it yourself.” So I took the first steps on my own. I researched programs, wrote emails, asked questions about destinations and languages, and pushed myself to take initiative. When my parents saw how committed I was, they began to support me more. My dad, however, was afraid. He did not want me to go because he worried I would be alone, but I trusted that this experience had a purpose.</p>
 
-    <p>
-      This journey taught me resilience, leadership, independence, and respect. It helped
-      me understand that growth begins when I step outside my comfort zone and trust my
-      own ability to build a better future.
-    </p>
+    <p>At the beginning, I was focused only on learning. I wanted to explore new places, understand a different culture, and grow academically. Making friends was not something I expected or even cared about much. I have never been someone who needs many people around; I have always found comfort in being dedicated and focused. My main goal was to improve my French and take advantage of every learning opportunity that came my way.</p>
 
-    <div class="quote" style="color:#5B2C83;">
-      “If you do not overcome your fear, you lose more than you think—you lose the chance to grow, to move forward, and to succeed.”
-    </div>
+    <p>Everything changed once I arrived in Canada.</p>
 
-    <div class="placeholder">
-      Embed or paste your full Personal Statement PDF here.
-    </div>
+    <p>During the first week, I stayed within my routine, attending classes and completing activities. But by the second week, something shifted. I allowed myself to open up, and unexpectedly, I met a group of very extroverted people who slowly became my friends. Walking through the streets with them, sharing experiences, and learning about their cultures made me realize how much my world was expanding.</p>
+
+    <p>I also learned how to become more independent. Being far from home meant making decisions on my own, managing my time responsibly, and adapting to situations that were completely new to me. Although there were moments when I missed my family and felt uncertain, each challenge helped me become stronger and more confident. Little by little, I discovered abilities that I did not know I had.</p>
+
+    <p>In that moment, I understood why people always talk about connections and opportunities. If you do not overcome your fear, you lose more than you think—you lose the chance to grow, to move forward, and to succeed. Not to shine in front of others, but to look at yourself in the mirror and be amazed by your own light and the person you are becoming.</p>
+
+    <p>This journey was not easy, emotionally or financially, but it taught me resilience, leadership, and respect. I was not driven by discomfort, but by a constant desire to grow. In the process, I built a new path for myself, one that allowed me to reach higher in friendships, expand my social world, and deepen my knowledge in ways I had never imagined.</p>
+
+    <p>The experience also taught me that leadership does not always mean leading a group. Sometimes leadership means having the courage to take the first step, believing in yourself when others are unsure, and remaining committed to your goals despite obstacles. Through this journey, I learned that resilience and determination can transform challenges into opportunities for personal growth.</p>
+
+    <p>Now, I feel that everything is possible. I understand that money is important, but I also believe that one day my knowledge, my effort, and my discipline will be enough to open every door I need. I am ready to continue growing, taking opportunities, and building a future where I can succeed not only for others, but for myself.</p>
   </div>
 </section>
 
 <section id="work">
-  <h2>Relevant Work</h2>
+  <div class="dark-section">
+    <h2>Relevant Work</h2>
 
-  <p>
-    This portfolio includes projects, assignments, research, presentations, and tasks
-    that represent my academic growth, creativity, and preparation for my future career.
-  </p>
+    <p>
+      This portfolio includes academic projects, research, presentations, assignments, and meaningful work that reflect my preparation, creativity, responsibility, and commitment to personal excellence.
+    </p>
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">🛩️</div>
-      <h3>Aviation Career Research</h3>
-      <p>Research about aviation schools, pilot training, technical preparation, and future professional opportunities.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="number">A</div>
+        <h3>Aviation Career Research</h3>
+        <p>Research about aviation schools, pilot training, technical preparation, and future professional opportunities.</p>
+      </div>
+
+      <div class="card">
+        <div class="number">B</div>
+        <h3>Digital Footprint Project</h3>
+        <p>A project focused on professional identity, responsible online presence, and personal branding.</p>
+      </div>
+
+      <div class="card">
+        <div class="number">C</div>
+        <h3>Academic Projects</h3>
+        <p>Presentations, research assignments, and school projects that demonstrate organization and communication skills.</p>
+      </div>
+
+      <div class="card">
+        <div class="number">D</div>
+        <h3>International Experience</h3>
+        <p>My experience in Canada strengthened my confidence, cultural awareness, language learning, and independence.</p>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="icon">💻</div>
-      <h3>Digital Footprint Project</h3>
-      <p>A project about online identity, professional image, and the importance of responsible digital presence.</p>
+    <div class="placeholder">
+      Add screenshots, project images, links, PDFs, presentations, or academic evidence here.
     </div>
-
-    <div class="card">
-      <div class="icon">📊</div>
-      <h3>Academic Projects</h3>
-      <p>Presentations, research assignments, and school projects that demonstrate organization and communication skills.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🌍</div>
-      <h3>International Experience</h3>
-      <p>My experience in Canada helped me strengthen my confidence, cultural awareness, and language learning.</p>
-    </div>
-  </div>
-
-  <div class="placeholder">
-    Add screenshots, project images, links, PDFs, or presentations here.
   </div>
 </section>
 
 <section id="interests">
-  <div class="light-section">
-    <h2>Personal Interests</h2>
+  <h2>Personal Interests</h2>
 
-    <p>
-      My interests reflect my passion for aviation, leadership, learning, and global growth.
-    </p>
+  <p>
+    My interests reflect the person I am becoming: someone passionate about aviation, learning, leadership, travel, culture, science, and meaningful personal growth.
+  </p>
 
-    <ul>
-      <li>Aviation and airplanes</li>
-      <li>Languages and cultural exchange</li>
-      <li>Travel and international experiences</li>
-      <li>Science and technology</li>
-      <li>Leadership and personal development</li>
-      <li>Volunteering and helping others</li>
-      <li>Health, wellness, and communication</li>
-    </ul>
-
-    <div class="placeholder">
-      Add personal photos, travel photos, volunteering photos, or aviation images here.
+  <div class="cards">
+    <div class="card">
+      <div class="number">01</div>
+      <h3>Aviation</h3>
+      <p>I am inspired by the discipline, responsibility, and precision required in the aviation field.</p>
     </div>
+
+    <div class="card">
+      <div class="number">02</div>
+      <h3>Languages & Culture</h3>
+      <p>I enjoy learning about new cultures and improving my language skills through international experiences.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">03</div>
+      <h3>Science & Technology</h3>
+      <p>I am interested in the technical and innovative side of aviation and future transportation.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">04</div>
+      <h3>Leadership & Service</h3>
+      <p>I value helping others, taking initiative, and growing through responsibility and commitment.</p>
+    </div>
+  </div>
+
+  <div class="placeholder">
+    Add personal photos, travel photos, volunteering photos, or aviation images here.
   </div>
 </section>
 
 <section id="video">
-  <h2>Admissions Video</h2>
+  <div class="dark-section">
+    <h2>Admissions Video</h2>
 
-  <p>
-    This page is reserved for my future admissions video. In this video, I will introduce
-    myself, explain my career goals, share my motivation to become a pilot, and describe
-    why I am prepared to continue growing academically and personally.
-  </p>
+    <p>
+      This page is reserved for my future admissions video. In this video, I will introduce myself, explain my career goals, describe my motivation to become a pilot, and share why I am prepared to continue growing academically and personally.
+    </p>
 
-  <div class="placeholder">
-    🎬 Video Coming Soon
-    <br><br>
-    Add your admissions video here after filming it.
+    <div class="placeholder">
+      Video Coming Soon. Add your admissions video here after filming it.
+    </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="light-section">
-    <h2>Contact</h2>
+  <h2>Contact</h2>
 
+  <div class="statement-box">
     <p>
-      Thank you for visiting my professional portfolio. This website was created to share
-      my academic journey, personal growth, and future goals with universities, aviation
-      schools, and scholarship committees.
+      Thank you for visiting my professional portfolio. This website was created to share my academic journey, personal growth, and future goals with universities, aviation schools, scholarship committees, and anyone interested in learning more about my path.
     </p>
-
-    <br>
 
     <p><strong>Name:</strong> Hiromi Pérez Jiménez</p>
 
     <p>
       <strong>Email:</strong>
-      <a href="mailto:hiromi.jimenez09@gmail.com" style="color:#7A4DFF;text-decoration:none;font-weight:600;">
+      <a href="mailto:hiromi.jimenez09@gmail.com">
         hiromi.jimenez09@gmail.com
       </a>
     </p>
